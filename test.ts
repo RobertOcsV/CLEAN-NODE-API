@@ -3,3 +3,4 @@ function teste (): number {
 }
 
 teste()
+// test pre-commit husky
