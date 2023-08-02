@@ -11,7 +11,7 @@ export const serverError = (): HttpResponse => ({
   body: new ServerError()
 })
 
-export const serverOk = (): HttpResponse => ({
+export const serverOk = (account: any): HttpResponse => ({
   statusCode: 200,
-  body: 'ok'
+  body: account
 })
