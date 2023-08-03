@@ -17,6 +17,7 @@ const config: Config = {
   },
   clearMocks: true,
   collectCoverage: true,
+  coveragePathIgnorePatterns: ["domain", "presentation/protocols", "signup-protocols.ts"]
 };
 
 export default config;
