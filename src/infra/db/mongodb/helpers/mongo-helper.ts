@@ -1,5 +1,5 @@
 import { MongoClient } from 'mongodb'
-import type { Collection } from 'mongodb'
+import type { Collection, ObjectId } from 'mongodb'
 
 export const MongoHelper = {
   client: null as unknown as MongoClient,
@@ -13,5 +13,17 @@ export const MongoHelper = {
 
   getCollection (name: string): Collection {
     return this.client.db().collection(name)
+  },
+
+  map: (collection: any, objectId: ObjectId): any => {
+    const collectionWithoutId = {
+      name: collection.name,
+      email: collection.email,
+      password: collection.password,
+      id: objectId.toHexString()
+    }
+
+    return collectionWithoutId
   }
+
 }
