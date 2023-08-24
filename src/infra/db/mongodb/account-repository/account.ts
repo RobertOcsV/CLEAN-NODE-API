@@ -12,7 +12,6 @@ export class AccountMongoRepository implements AddAccountRepository {
     }
 
     const accountWithoutId = MongoHelper.map(accountData, accountObject._id)
-    console.log(accountWithoutId)
     return accountWithoutId
   }
 }
